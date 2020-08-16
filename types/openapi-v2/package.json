@@ -17,5 +17,8 @@
         "Typescript",
         "OpenApi",
         "Swagger"
-    ]
+    ],
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com/"
+    }
 }
