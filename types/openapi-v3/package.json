@@ -1,0 +1,21 @@
+{
+    "name": "@tstypes/openapi-v3",
+    "version": "1.0.0",
+    "description": "OpenApi v3 types",
+    "author": "TsTypes",
+    "license": "MIT",
+    "homepage": "https://github.com/TsTypes/TypescriptTypes#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/TsTypes/TypescriptTypes.git",
+        "directory": "types/openapi-v3"
+    },
+    "bugs": {
+        "url": "https://github.com/TsTypes/TypescriptTypes/issues"
+    },
+    "keywords": [
+        "Typescript",
+        "OpenApi",
+        "Swagger"
+    ]
+}

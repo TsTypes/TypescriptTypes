@@ -1,0 +1,29 @@
+{
+    "private": true,
+    "name": "@tstypes/typescript-types",
+    "version": "1.0.0",
+    "description": "Typescript types for libraries and specifications",
+    "author": "TsTypes",
+    "license": "MIT",
+    "homepage": "https://github.com/TsTypes/TypescriptTypes#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/TsTypes/TypescriptTypes.git"
+    },
+    "bugs": {
+        "url": "https://github.com/TsTypes/TypescriptTypes/issues"
+    },
+    "keywords": [
+        "typescript",
+        "types",
+        "libraries",
+        "javascript"
+    ],
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "devDependencies": {
+        "prettier": "^2.0.2",
+        "typescript": "next"
+    }
+}
