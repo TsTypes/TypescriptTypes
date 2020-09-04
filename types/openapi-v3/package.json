@@ -1,6 +1,6 @@
 {
     "name": "@tstypes/openapi-v3",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "OpenApi v3 types",
     "author": "TsTypes",
     "license": "MIT",
@@ -17,8 +17,5 @@
         "Typescript",
         "OpenApi",
         "Swagger"
-    ],
-    "publishConfig": {
-        "registry": "https://npm.pkg.github.com/"
-    }
+    ]
 }
