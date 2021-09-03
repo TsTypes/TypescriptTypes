@@ -93,6 +93,20 @@ export interface OpenApiXml {
     wrapped?: boolean;
 }
 
+type OpenApiSchemaFormat =
+    | 'int32'
+    | 'int64'
+    | 'float'
+    | 'double'
+    | 'string'
+    | 'boolean'
+    | 'byte'
+    | 'binary'
+    | 'date'
+    | 'date-time'
+    | 'password';
+type OpenApiSchemaType = 'string' | 'number' | 'integer' | 'boolean' | 'array' | 'object';
+
 /**
  * The Schema Object allows the definition of input and output data types. These types can be objects, but also primitives and arrays.
  * This object is an extended subset of the JSON Schema Specification Wright Draft 00.
@@ -118,7 +132,7 @@ export interface OpenApiSchema {
     required?: string[];
     enum?: string[] | number[];
     /** Value MUST be a string. Multiple types via an array are not supported */
-    type?: string;
+    type?: OpenApiSchemaType;
     /** Inline or referenced schema MUST be of a Schema Object and not a standard JSON Schema. */
     allOf?: OpenApiSchema[] | OpenApiReference[];
     /** Inline or referenced schema MUST be of a Schema Object and not a standard JSON Schema. */
@@ -136,18 +150,7 @@ export interface OpenApiSchema {
     /**  CommonMark syntax MAY be used for rich text representation. */
     description?: string;
     /** See Data Type Formats for further details. While relying on JSON Schema's defined formats, the OAS offers a few additional predefined formats. */
-    format?:
-        | 'int32'
-        | 'int64'
-        | 'float'
-        | 'double'
-        | 'string'
-        | 'boolean'
-        | 'byte'
-        | 'binary'
-        | 'date'
-        | 'date-time'
-        | 'password';
+    format?: OpenApiSchemaFormat;
     /**
      * The default value represents what would be assumed by the consumer of the input as the value of the schema if one is not provided.
      * Unlike JSON Schema, the value MUST conform to the defined type for the Schema Object defined at the same level.
@@ -191,7 +194,14 @@ export interface OpenApiSchema {
 /**
  * In order to support common ways of serializing simple parameters, a set of style values are defined.
  */
-export type OpenApiStyle = 'matrix' | 'label' | 'form' | 'simple' | 'spaceDelimited' | 'pipeDelimited' | 'deepObject';
+export type OpenApiStyle =
+    | 'matrix'
+    | 'label'
+    | 'form'
+    | 'simple'
+    | 'spaceDelimited'
+    | 'pipeDelimited'
+    | 'deepObject';
 export type OpenApiStyleType = 'primitive' | 'array' | 'object';
 
 /**
