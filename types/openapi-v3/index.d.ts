@@ -93,19 +93,22 @@ export interface OpenApiXml {
     wrapped?: boolean;
 }
 
-type OpenApiSchemaFormat =
-    | 'int32'
-    | 'int64'
-    | 'float'
-    | 'double'
-    | 'string'
-    | 'boolean'
-    | 'byte'
-    | 'binary'
-    | 'date'
-    | 'date-time'
-    | 'password';
-type OpenApiSchemaType = 'string' | 'number' | 'integer' | 'boolean' | 'array' | 'object';
+type OpenApiSchemaFormat = string &
+    (
+        | 'int32'
+        | 'int64'
+        | 'float'
+        | 'double'
+        | 'string'
+        | 'boolean'
+        | 'byte'
+        | 'binary'
+        | 'date'
+        | 'date-time'
+        | 'password'
+    );
+type OpenApiSchemaType = string &
+    ('string' | 'number' | 'integer' | 'boolean' | 'array' | 'object');
 
 /**
  * The Schema Object allows the definition of input and output data types. These types can be objects, but also primitives and arrays.
