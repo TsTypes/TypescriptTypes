@@ -133,17 +133,17 @@ export interface OpenApiSchema {
     maxProperties?: number;
     minProperties?: number;
     required?: string[];
-    enum?: string[] | number[];
+    enum?: Array<string | number>;
     /** Value MUST be a string. Multiple types via an array are not supported */
     type?: OpenApiSchemaType;
     /** Inline or referenced schema MUST be of a Schema Object and not a standard JSON Schema. */
-    allOf?: OpenApiSchema[] | OpenApiReference[];
+    allOf?: Array<OpenApiSchema | OpenApiReference>;
     /** Inline or referenced schema MUST be of a Schema Object and not a standard JSON Schema. */
-    oneOf?: OpenApiSchema[] | OpenApiReference[];
+    oneOf?: Array<OpenApiSchema | OpenApiReference>;
     /** Inline or referenced schema MUST be of a Schema Object and not a standard JSON Schema. */
-    anyOf?: OpenApiSchema[] | OpenApiReference[];
+    anyOf?: Array<OpenApiSchema | OpenApiReference>;
     /** Inline or referenced schema MUST be of a Schema Object and not a standard JSON Schema. */
-    not?: OpenApiSchema[] | OpenApiReference[];
+    not?: Array<OpenApiSchema | OpenApiReference>;
     /** Value MUST be an object and not an array. Inline or referenced schema MUST be of a Schema Object and not a standard JSON Schema. items MUST be present if the type is array. */
     items?: OpenApiSchema | OpenApiReference;
     /** Property definitions MUST be a Schema Object and not a standard JSON Schema (inline or referenced). */
@@ -669,7 +669,7 @@ export interface OpenApiOperation {
      * The list MUST NOT include duplicated parameters. A unique parameter is defined by a combination of a name and location.
      *  The list can use the Reference Object to link to parameters that are defined at the OpenAPI Object's components/parameters.
      */
-    parameters?: OpenApiParameter[] | OpenApiReference[];
+    parameters?: Array<OpenApiParameter | OpenApiReference>;
     /**
      * The request body applicable for this operation. The requestBody is only supported in HTTP methods where the HTTP 1.1 specification RFC7231 has explicitly defined semantics for request bodies.
      * In other cases where the HTTP spec is vague, requestBody SHALL be ignored by consumers.
@@ -735,7 +735,7 @@ export interface OpenApiPath {
      * The list MUST NOT include duplicated parameters. A unique parameter is defined by a combination of a name and location.
      * The list can use the Reference Object to link to parameters that are defined at the OpenAPI Object's components/parameters.
      */
-    parameters?: OpenApiParameter[] | OpenApiReference[];
+    parameters?: Array<OpenApiParameter | OpenApiReference>;
 }
 
 /**

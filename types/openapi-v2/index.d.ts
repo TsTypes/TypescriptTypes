@@ -19,20 +19,20 @@
  * https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#data-types
  */
 export type OpenApiDataFormat =
-    | "int32"
-    | "int64"
-    | "float"
-    | "double"
-    | "string"
-    | "boolean"
-    | "byte"
-    | "binary"
-    | "date"
-    | "date-time"
-    | "password";
+    | 'int32'
+    | 'int64'
+    | 'float'
+    | 'double'
+    | 'string'
+    | 'boolean'
+    | 'byte'
+    | 'binary'
+    | 'date'
+    | 'date-time'
+    | 'password';
 
 /** The value MUST be one of "string", "number", "integer", "boolean", or "array". */
-export type OpenApiDataType = "string" | "number" | "integer" | "boolean" | "array";
+export type OpenApiDataType = 'string' | 'number' | 'integer' | 'boolean' | 'array';
 
 /**
  * Allows referencing an external resource for extended documentation.
@@ -183,7 +183,7 @@ export interface OpenApiSchema {
     /**
      * See https://tools.ietf.org/html/draft-fge-json-schema-validation-00#section-5.5.3.
      */
-    allOf?: OpenApiSchema[] | OpenApiReference[];
+    allOf?: Array<OpenApiSchema | OpenApiReference>;
     /**
      * See https://tools.ietf.org/html/draft-fge-json-schema-validation-00#section-5.4.4.
      */
@@ -311,7 +311,7 @@ export interface OpenApiInfo {
  *
  * Default value is csv.
  */
-export type OpenApiCollectionFormat = "csv" | "ssv" | "tsv" | "pipes";
+export type OpenApiCollectionFormat = 'csv' | 'ssv' | 'tsv' | 'pipes';
 
 /**
  * A limited subset of JSON-Schema's items object. It is used by parameter definitions that are not located in "body".
@@ -512,7 +512,7 @@ export interface OpenApiParameter {
  * The value MUST be one of "string", "number", "integer", "boolean", "array" or "file".
  * If type is "file", the consumes MUST be either "multipart/form-data", " application/x-www-form-urlencoded" or both and the parameter MUST be in "formData".
  */
-export type OpenApiParameterType = OpenApiDataType | "file";
+export type OpenApiParameterType = OpenApiDataType | 'file';
 /**
  * Path - Used together with Path Templating, where the parameter value is actually part of the operation's URL.
  * This does not include the host or base path of the API. For example, in /items/{itemId}, the path parameter is itemId.
@@ -534,7 +534,7 @@ export type OpenApiParameterType = OpenApiDataType | "file";
  * This is normally used for simple parameters that are being transferred. multipart/form-data - each parameter takes a section in the payload with an internal header.
  * For example, for the header Content-Disposition: form-data; name="submit-name" the name of the parameter is submit-name. This type of form parameters is more commonly used for file transfers.
  */
-export type OpenApiParameterIn = "path" | "query" | "header" | "formData" | "body";
+export type OpenApiParameterIn = 'path' | 'query' | 'header' | 'formData' | 'body';
 /**
  * The format of the array if type array is used. Possible values are:
  * csv - comma separated values foo,bar.
@@ -549,7 +549,7 @@ export type OpenApiParameterIn = "path" | "query" | "header" | "formData" | "bod
  *
  * Default value is csv.
  */
-export type OpenApiParameterCollectionFormat = OpenApiCollectionFormat | "multi";
+export type OpenApiParameterCollectionFormat = OpenApiCollectionFormat | 'multi';
 
 /**
  * An object to hold parameters to be reused across operations. Parameter definitions can be referenced to the ones defined here.
@@ -730,71 +730,71 @@ export interface OpenApiResponses extends OpenApiResponsesHttpCodes {
     default?: OpenApiResponse | OpenApiReference;
 }
 export type HttpStatusCodes =
-    | "100"
-    | "101"
-    | "102"
-    | "200"
-    | "201"
-    | "202"
-    | "203"
-    | "204"
-    | "205"
-    | "206"
-    | "207"
-    | "208"
-    | "226"
-    | "300"
-    | "301"
-    | "302"
-    | "303"
-    | "304"
-    | "305"
-    | "307"
-    | "308"
-    | "400"
-    | "401"
-    | "402"
-    | "403"
-    | "404"
-    | "405"
-    | "406"
-    | "407"
-    | "408"
-    | "409"
-    | "410"
-    | "411"
-    | "412"
-    | "413"
-    | "414"
-    | "415"
-    | "416"
-    | "417"
-    | "421"
-    | "422"
-    | "423"
-    | "424"
-    | "426"
-    | "428"
-    | "429"
-    | "431"
-    | "444"
-    | "451"
-    | "499"
-    | "500"
-    | "501"
-    | "502"
-    | "503"
-    | "504"
-    | "505"
-    | "506"
-    | "507"
-    | "508"
-    | "510"
-    | "511"
-    | "599";
+    | '100'
+    | '101'
+    | '102'
+    | '200'
+    | '201'
+    | '202'
+    | '203'
+    | '204'
+    | '205'
+    | '206'
+    | '207'
+    | '208'
+    | '226'
+    | '300'
+    | '301'
+    | '302'
+    | '303'
+    | '304'
+    | '305'
+    | '307'
+    | '308'
+    | '400'
+    | '401'
+    | '402'
+    | '403'
+    | '404'
+    | '405'
+    | '406'
+    | '407'
+    | '408'
+    | '409'
+    | '410'
+    | '411'
+    | '412'
+    | '413'
+    | '414'
+    | '415'
+    | '416'
+    | '417'
+    | '421'
+    | '422'
+    | '423'
+    | '424'
+    | '426'
+    | '428'
+    | '429'
+    | '431'
+    | '444'
+    | '451'
+    | '499'
+    | '500'
+    | '501'
+    | '502'
+    | '503'
+    | '504'
+    | '505'
+    | '506'
+    | '507'
+    | '508'
+    | '510'
+    | '511'
+    | '599';
 
 /** The value for the Swagger Object schemes definition. Values MUST be from the list: "http", "https", "ws", "wss". */
-export type OpenApiScheme = "http" | "https" | "ws" | "wss";
+export type OpenApiScheme = 'http' | 'https' | 'ws' | 'wss';
 
 /**
  * Lists the required security schemes to execute this operation.
@@ -857,7 +857,7 @@ export interface OpenApiOperation {
      * A unique parameter is defined by a combination of a name and location.
      * The list can use the Reference Object to link to parameters that are defined at the Swagger Object's parameters. There can be one "body" parameter at most.
      */
-    parameters?: OpenApiParameter[] | OpenApiReference[];
+    parameters?: Array<OpenApiParameter | OpenApiReference>;
     /**
      * The list of possible responses as they are returned from executing this operation.
      */
@@ -927,7 +927,7 @@ export interface OpenApiPath {
      * The list can use the Reference Object to link to parameters that are defined at the Swagger Object's parameters.
      * There can be one "body" parameter at most.
      */
-    parameters?: OpenApiParameter[] | OpenApiReference[];
+    parameters?: Array<OpenApiParameter | OpenApiReference>;
 }
 
 /**
@@ -980,7 +980,7 @@ export interface OpenApiSecurityScheme {
     /**
      * The type of the security scheme. Valid values are "basic", "apiKey" or "oauth2".
      */
-    type: "basic" | "apiKey" | "oauth2";
+    type: 'basic' | 'apiKey' | 'oauth2';
     /**
      * A short description for security scheme.
      */
@@ -992,11 +992,11 @@ export interface OpenApiSecurityScheme {
     /**
      * The location of the API key. Valid values are "query" or "header".
      */
-    in?: "query" | "header";
+    in?: 'query' | 'header';
     /**
      * The flow used by the OAuth2 security scheme. Valid values are "implicit", "password", "application" or "accessCode".
      */
-    flow?: "implicit" | "password" | "application" | "accessCode";
+    flow?: 'implicit' | 'password' | 'application' | 'accessCode';
     /**
      * The authorization URL to be used for this flow. This SHOULD be in the form of a URL.
      */
